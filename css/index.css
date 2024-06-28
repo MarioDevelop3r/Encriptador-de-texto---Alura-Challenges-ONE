@@ -1,0 +1,213 @@
+:root {
+    --background: #2C5788;
+    --card: #B0B8C0;
+    --foreground: #222222;
+    --input: #E6E6E6;
+    --ring: #0056b3;
+    --primary: #0056b3;
+    --primary-foreground: #E6E6E6;
+    --border: #0056b3;
+    --muted-foreground: #666666;
+    --footer: #E6E6E6;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  body {
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+  
+  header {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    
+    
+  }
+  
+  .header-nav {
+    display: flex;
+    padding-top: auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .logo-container, .title-container {
+    flex: 1;
+    
+  }
+  
+  .logo {
+    padding: auto;
+    width: 100px;
+    height: 50px;
+  }
+  
+  .title {
+    color: var(--primary-foreground);
+    font-size: 20px;
+    text-align: center;
+    margin: auto; /* Espacio entre el logo y el título */
+  }
+  
+  .container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--card);
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    gap: 16px;
+    max-width: 95%;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin: auto;
+  }
+  
+  .input-section, .output-section {
+    background-color: var(--card);
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  h1, h2 {
+    color: var(--foreground);
+  }
+  
+  textarea {
+    width: 100%;
+    height: 200px;
+    min-height: 200px;
+    padding: 8px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background-color: var(--input);
+    color: var(--foreground);
+    margin-bottom: 8px;
+    transition: box-shadow 0.3s;
+    box-sizing: border-box;
+  }
+  
+  textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--ring);
+  }
+  
+  .info {
+    color: var(--muted-foreground);
+    margin-bottom: 8px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #encrypt-btn {
+    border: 1px solid var(--border);
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+  
+  #encrypt-btn:hover {
+    background-color: rgba(var(--foreground), 0.1);
+    color: var(--foreground);
+    font-weight: bold;
+  }
+  
+  #decrypt-btn {
+    border: 1px solid var(--border);
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+  
+  #decrypt-btn:hover {
+    background-color: rgba(var(--foreground), 0.1);
+    color: var(--foreground);
+    font-weight: bold;
+  }
+  
+  img.section-output {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 46px;
+  }
+  
+  #copy-btn {
+    border: 1px solid var(--border);
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    
+  }
+  
+  #copy-btn:hover {
+    background-color: rgba(var(--foreground), 0.1);
+    color: var(--foreground);
+    font-weight: bold;
+  }
+  
+  @media (min-width: 768px) {
+    .header-nav {
+        padding: 16px 32px;
+    }
+  
+    .title {
+        font-size: 20px;
+        text-align: left;
+        margin: 20px; /* Ajuste adicional en escritorio */
+    }
+  
+    .container {
+        flex-direction: row;
+    }
+  
+    .input-section, .output-section {
+        flex: 1;
+        margin: 8px;
+    }
+  }
+  
+  footer {
+    text-align: center;
+    padding: 16px;
+    background-color: var(--background);
+    color: var(--footer);
+    
+  }
+  
+  span {
+    color: var(--footer);
+    font-weight: bold;
+  }

@@ -12,35 +12,37 @@
 <body>
     <header>
         <nav class="header-nav">
-            <img class="logo" src="./img/alura-logo.svg" alt="logo alura">
+            <img class="logo" src="./img/alura-logo.svg" alt="logo-alura">
             <h1 class="title">Encriptador de texto - Alura Challenges ONE</h1>
         </nav>
     </header>
     <div class="container">
         <div class="input-section">
             <h2>Ingrese el texto aqui</h2>
-            <textarea name="" id="input-text" placeholder="Escribe aqui..."></textarea>
-            <div class="info"> Solo letras minúsculas y sin acentos</div>
+            <textarea id="input-text" placeholder="Escribe aqui..."></textarea>
+            <div class="info">Solo letras minúsculas y sin
+                acentos</div>
             <div class="buttons">
-                <button class="encrypt-btn">Encriptar</button>
-                <button class="decrypt-btn">Desencriptar</button>
+                <button id="encrypt-btn">Encriptar</button>
+                <button id="decrypt-btn">Desencriptar</button>
             </div>
             <div class="output-section">
                 <img class="section-output" src="./img/muñeco.svg" alt="imagen de persona buscando algo">
                 <h2 id="output-message" Ningun mensaje fue encontrado></h2>
-                <div class="output-text">Ingresa el texto que deseas encriptar o desencriptar</div>
+                <div class="output-text"> ℹ Ingresa el texto que deseas encriptar o desencriptar</div>
                 <button id="copy-btn">Copiar</button>
             </div>
         </div>
-        <footer>
-            <p>Hecho con ❤️ por: <span>Mario Rojas</span></p>
-            <p>Sigueme en mis redes:
-                <a href="https://github.com/MarioDevelop3r" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/mario-rojas-dev/" target="_blank"><i
-                        class="fab fa-linkedin"></i></a>
-            </p>
-        </footer>
     </div>
+    <footer>
+        <p>Hecho con ❤️ por: <span>Mario Rojas</span></p>
+        <p>Sigueme en mis redes:
+            <a href="https://github.com/MarioDevelop3r" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/mario-rojas-dev/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </p>
+
+    </footer>
+    <script src="./js/app.js"></script>
 </body>
 
 </html>
