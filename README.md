@@ -45,5 +45,5 @@ Para mejorar la experiencia del usuario, he incluido:
 
 1. Clona este repositorio en tu máquina local:
    ```bash
-   git clone https://github.com/tu_usuario/nombre_del_repositorio.git
+   git clone https://github.com/MarioDevelop3r/Encriptador-de-texto---Alura-Challenges-ONE.git
 
