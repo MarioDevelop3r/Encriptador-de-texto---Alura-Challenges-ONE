@@ -47,3 +47,4 @@ Para mejorar la experiencia del usuario, he incluido:
    ```bash
    git clone https://github.com/MarioDevelop3r/Encriptador-de-texto---Alura-Challenges-ONE.git
 
+![Prancheta 3](https://github.com/MarioDevelop3r/Encriptador-de-texto---Alura-Challenges-ONE/assets/135486752/0067d47e-adbe-4ecb-94ba-ebfe99aa56fb)
