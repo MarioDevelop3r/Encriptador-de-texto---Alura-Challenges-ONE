@@ -25,10 +25,11 @@
     justify-content: center;
     align-items: center;
     height: auto;
+    width: 100%;
   }
   
   header {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,7 +44,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 600px;
+    min-width: 300px;
   }
   
   .logo-container, .title-container {
@@ -70,16 +71,16 @@
     justify-content: center;
     align-items: center;
     background-color: var(--card);
-    padding: 16px;
+    /* padding: 16px; */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     flex-direction: column;
     gap: 16px;
-    max-width: 95%;
-    width: 100%;
-    height: 100vh;
+    /* max-width: 95%; */
+    width: 95%;
+    height: 100%;
     text-align: center;
-    margin: auto;
+    margin: 20px;
   }
   
   .input-section, .output-section {
@@ -170,7 +171,7 @@
     height: 250px;
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 46px;
+
   }
   
   #copy-btn {
@@ -185,6 +186,15 @@
     color: var(--foreground);
     font-weight: bold;
   }
+  footer {
+    width: 100%;
+    margin: 20px;
+  }
+  .footer-text {
+    margin: auto;
+  
+  }
+  
   
   @media (min-width: 768px) {
     .header-nav {
@@ -199,6 +209,8 @@
   
     .container {
         flex-direction: row;
+        align-items: center;
+        height: auto;
     }
   
     .input-section, .output-section {
