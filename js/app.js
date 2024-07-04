@@ -1,5 +1,5 @@
 document.getElementById("encrypt-btn").addEventListener("click", () => {
-  const inputText = document.getElementById("input-text").value; // convertir a minusculas
+  const inputText = document.getElementById("input-text").value; 
   if (!validText(inputText)) {
     alert(
       "El texto ingresado no debe contener acentos ni caracteres especiales"
@@ -11,7 +11,7 @@ document.getElementById("encrypt-btn").addEventListener("click", () => {
 });
 
 document.getElementById("decrypt-btn").addEventListener("click", () => {
-  const inputText = document.getElementById("input-text").value; // convertir a minusculas
+  const inputText = document.getElementById("input-text").value; 
   if (!validText(inputText)) {
     alert(
       "El texto ingresado no debe contener acentos ni caracteres especiales"
