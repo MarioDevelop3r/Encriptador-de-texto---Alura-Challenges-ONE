@@ -214,7 +214,7 @@
     .container {
         flex-direction: row;
         align-items: center;
-        height: auto;
+        height:90%;
     }
   
     .input-section, .output-section {
