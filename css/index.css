@@ -25,7 +25,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    
   }
   
   header {
@@ -33,23 +33,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    p
-    
+    margin: 10px;
+    box-sizing: border-box;  /* Para que el padding no afecte el tamaño total */
+    background-color: var(--background);
     
   }
   
   .header-nav {
     display: flex;
-    padding-top: 10px;
+    /* margin-top: 20px; */
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-width: 300px;
+    box-sizing: border-box; /* Para que el padding no afecte el tamaño total */
+    flex-wrap: nowrap;
   }
   
   .logo-container, .title-container {
     flex: 1;
-    
   }
   
   .logo {
@@ -62,7 +63,7 @@
     color: var(--primary-foreground);
     font-size: 20px;
     text-align: center;
-    margin: auto; /* Espacio entre el logo y el título */
+    /* margin: auto; Espacio entre el logo y el título */
   }
   
   .container {
@@ -71,14 +72,13 @@
     justify-content: center;
     align-items: center;
     background-color: var(--card);
-    /* padding: 16px; */
+    padding: 16px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     flex-direction: column;
     gap: 16px;
-    /* max-width: 95%; */
-    width: 95%;
-    height: 90%;
+    width: 90%;
+    height: 100%;
     text-align: center;
     margin: 20px;
   }
@@ -88,7 +88,7 @@
     padding: 16px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 100%;
+    width: 90%;
     box-sizing: border-box;
     color: var(--foreground);
     font-weight: bold;
@@ -97,7 +97,8 @@
   .output-text {
     color: var(--foreground);
     font-weight: bold;
-    padding-bottom: 20px;
+    padding-bottom: 20px; /* Ajuste adicional en escritorio */
+    
   }
   
   h1, h2 {
@@ -108,12 +109,12 @@
     width: 95%;
     height: 200px;
     min-height: 200px;
-    padding: 8px;
+    /* padding: 8px; */
     border: 1px solid var(--border);
     border-radius: 4px;
     background-color: var(--input);
     color: var(--foreground);
-    margin-bottom: 8px;
+    /* margin-bottom: 8px; */
     transition: box-shadow 0.3s;
     box-sizing: border-box;
   }
@@ -149,6 +150,7 @@
   }
   
   #encrypt-btn:hover {
+    border: 1px solid var(--border);
     background-color: rgba(var(--foreground), 0.1);
     color: var(--foreground);
     font-weight: bold;
@@ -167,8 +169,8 @@
   }
   
   img.section-output {
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
@@ -188,43 +190,43 @@
   }
   footer {
     width: 100%;
-    margin: 20px;
+    /* margin: 20px; */
     text-align: center;
     padding: 16px;
     background-color: var(--background);
     color: var(--footer);
   }
-  .footer-text {
-    margin: auto;
-  
+
+  #footer-text {
+    font-size: 50px;
   }
   
   
   @media (min-width: 768px) {
+   
     .header-nav {
-        padding: 16px 32px;
+        margin-top: 30px;
     }
   
     .title {
         font-size: 20px;
         text-align: left;
-        margin: 20px; /* Ajuste adicional en escritorio */
+        margin-top: 20px; /* Ajuste adicional en escritorio */
     }
   
     .container {
         flex-direction: row;
         align-items: center;
-        height:100%;
+        height: 100%;
+        margin: 0px;
     }
   
     .input-section, .output-section {
         flex: 1;
         margin: 8px;
-        color: var(--foreground);
+    
     }
   }
-  
-
   
   span {
     color: var(--footer);
