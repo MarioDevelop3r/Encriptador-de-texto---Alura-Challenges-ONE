@@ -32,7 +32,7 @@ document.getElementById("copy-btn").addEventListener("click", () => {
 function encrypt(Text) {
   return Text.replace(/e/g, "enter")
     .replace(/i/g, "imes")
-    .replace(/a/g, "ain")
+    .replace(/a/g, "ai")
     .replace(/o/g, "ober")
     .replace(/u/g, "ufat");
 }
@@ -40,7 +40,7 @@ function encrypt(Text) {
 function decrypt(Text) {
   return Text.replace(/enter/g, "e")
     .replace(/imes/g, "i")
-    .replace(/ain/g, "a")
+    .replace(/ai/g, "a")
     .replace(/ober/g, "o")
     .replace(/ufat/g, "u");
 }
