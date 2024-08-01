@@ -130,7 +130,7 @@ textarea:focus {
 /* Información adicional */
 .info {
   color: var(--muted-foreground);
-  margin-bottom: 8px;
+  margin-bottom: 8px; 
 }
 
 /* Estilo de los botones */
