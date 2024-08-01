@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,45 +7,45 @@
     <link rel="stylesheet" href="./css/index.css">
     <title>Encriptador de texto</title>
 </head>
-
 <body>
     <header>
         <nav class="header-nav">
-            <img class="logo" src="./img/alura-logo.svg" alt="logo-alura">
+            <img class="logo" src="./img/alura-logo.svg" alt="Logo de Alura">
             <h1 class="title">Encriptador de texto - Alura Challenges ONE</h1>
         </nav>
     </header>
-    <div class="container">
-        <div class="input-section">
-            <h2>Ingrese el texto aqui</h2>
-            <textarea id="input-text" placeholder="Escribe aqui..."></textarea>
-            <div class="info">Solo letras minúsculas y sin
-                acentos</div>
+    <main class="container">
+        <section class="input-section">
+            <h2>Ingrese el texto aquí</h2>
+            <textarea id="input-text" placeholder="Escribe aquí..."></textarea>
+            <div class="info">Solo letras minúsculas y sin acentos</div>
             <div class="buttons">
                 <button id="encrypt-btn">Encriptar</button>
                 <button id="decrypt-btn">Desencriptar</button>
+                <button id="theme-toggle-btn">Tema</button>
             </div>
-        </div>
-        <div class="output-section">
-            <img class="section-output" src="./img/muñeco.svg" alt="imagen de persona buscando algo">
-            <h2 id="output-message">Ningun mensaje fue encontrado</h2>
-            <div class="output-text" id="output-text"> ℹ Ingresa el texto que deseas encriptar o desencriptar</div>
+        </section>
+        <section class="output-section">
+            <img class="section-output" src="./img/muñeco.svg" alt="Imagen de persona buscando algo">
+            <h2 id="output-message">Ningún mensaje fue encontrado</h2>
+            <div class="output-text" id="output-text">ℹ Ingresa el texto que deseas encriptar o desencriptar</div>
             <button id="copy-btn">Copiar</button>
-        </div>
-    </div>
-
+        </section>
+        
+    </main>
+    <section class="history-section">
+        <h2>Historial</h2>
+        <ul id="history-list"></ul>
+    </section>
     <footer>
         <div class="footer-text">
             <p>Hecho con ❤️ por: <span>Mario Rojas</span></p>
-            <p>Sigueme en mis redes:
-                <a href="https://github.com/MarioDevelop3r" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/mario-rojas-dev/" target="_blank"><i
-                        class="fab fa-linkedin"></i></a>
+            <p>Sígueme en mis redes:
+                <a href="https://github.com/MarioDevelop3r" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/mario-rojas-dev/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
             </p>
         </div>
-
     </footer>
     <script src="./js/app.js"></script>
 </body>
-
 </html>
