@@ -1,234 +1,258 @@
+/* Estilos generales */
 :root {
-    --background: #2C5788;
-    --card: #B0B8C0;
-    --foreground: #222222;
-    --input: #E6E6E6;
-    --ring: #0056b3;
-    --primary: #0056b3;
-    --primary-foreground: #E6E6E6;
-    --border: #0056b3;
-    --muted-foreground: #666666;
-    --footer: #E6E6E6;
-  }
-  
-  html, body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--background);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  body {
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    
-  }
-  
-  header {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    box-sizing: border-box;  /* Para que el padding no afecte el tamaño total */
-    background-color: var(--background);
-    
-  }
-  
+  --background: #f0f0f0;
+  --card: #ffffff;
+  --foreground: #333;
+  --input: #f9f9f9;
+  --ring: #333;
+  --primary: #007bff;
+  --primary-foreground: #ffffff;
+  --border: #ccc;
+  --muted-foreground: #666;
+  --footer: #333;
+}
+
+/* Modo oscuro */
+.dark-mode {
+  --background: #333;
+  --card: #444;
+  --foreground: #ddd;
+  --input: #555;
+  --ring: #888;
+  --primary: #888;
+  --primary-foreground: #ddd;
+  --border: #888;
+  --muted-foreground: #aaa;
+  --footer: #ddd;
+}
+
+/* Estilos del body */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--background);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos del header */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  background-color: var(--background);
+}
+
+.header-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+}
+
+.title {
+  color: var(--foreground);
+  font-size: 1.25rem;
+  text-align: center;
+  margin: 0 20px;
+}
+
+/* Contenedor principal */
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--card);
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+/* Secciones de entrada y salida */
+.input-section, .output-section {
+  background-color: var(--card);
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  box-sizing: border-box;
+  color: var(--foreground);
+  font-weight: bold;
+}
+
+/* Estilo del texto de salida */
+.output-text {
+  color: var(--foreground);
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+/* Estilo de los encabezados */
+h2 {
+  color: var(--foreground);
+  font-size: 1rem;
+}
+
+/* Estilo del área de texto */
+textarea {
+  width: 95%;
+  height: 150px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: var(--input);
+  color: var(--foreground);
+  transition: box-shadow 0.3s;
+  box-sizing: border-box;
+}
+
+/* Estilo cuando el área de texto está en foco */
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+/* Información adicional */
+.info {
+  color: var(--muted-foreground);
+  margin-bottom: 8px;
+}
+
+/* Estilo de los botones */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Botones específicos */
+#encrypt-btn, #decrypt-btn, #copy-btn {
+  border: 1px solid var(--border);
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+#encrypt-btn:hover, #decrypt-btn:hover, #copy-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--foreground);
+  font-weight: bold;
+}
+
+/* Imagen en la sección de salida */
+img.section-output {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos del historial */
+.history-section {
+  background-color: var(--card);
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  box-sizing: border-box;
+  margin: auto;
+  color: var(--foreground);
+}
+
+#history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#history-list li {
+  border-bottom: 1px solid var(--border);
+  padding: 8px 0;
+}
+
+/* Estilos del footer */
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 16px;
+  background-color: var(--background);
+  color: var(--footer);
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
   .header-nav {
-    display: flex;
-    
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    box-sizing: border-box; /* Para que el padding no afecte el tamaño total */
-    flex-wrap: nowrap;
+    padding: 0 20px;
   }
-  
-  .logo-container, .title-container {
-    flex: 1;
-  }
-  
-  .logo {
-    padding: auto;
-    width: 100px;
-    height: 50px;
-  }
-  
+
   .title {
-    color: var(--primary-foreground);
-    font-size: 20px;
-    text-align: center;
-    /* margin: auto; Espacio entre el logo y el título */
+    font-size: 1.125rem;
   }
-  
+
   .container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--card);
-    padding: 16px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex-direction: column;
-    gap: 16px;
-    width: 90%;
-    height: 90%;
-    text-align: center;
-   
+    flex-direction: row;
+    align-items: flex-start;
+    height: auto;
+    margin: 20px auto;
   }
-  
+
   .input-section, .output-section {
-    background-color: var(--card);
-    padding: 16px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 90%;
-    box-sizing: border-box;
-    color: var(--foreground);
-    font-weight: bold;
+    flex: 1;
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-nav {
+    flex-direction: row;
+    align-items: center;
   }
 
-  .output-text {
-    color: var(--foreground);
-    font-weight: bold;
-    padding-bottom: 20px; /* Ajuste adicional en escritorio */
-    
+  .logo {
+    width: 30px;
   }
-  
-   h2 {
-    color: var(--foreground);
-    font-size: 15px;
-  }
-  
-  textarea {
-    width: 95%;
-    height: 150px;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    background-color: var(--input);
-    color: var(--foreground);
-    /* margin-bottom: 8px; */
-    transition: box-shadow 0.3s;
-    box-sizing: border-box;
-  }
-  
-  textarea:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--ring);
-  }
-  
-  .info {
-    color: var(--muted-foreground);
-    margin-bottom: 8px;
-  }
-  
-  .buttons {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-  }
-  
-  button {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  #encrypt-btn {
-    border: 1px solid var(--border);
-    background-color: var(--primary);
-    color: var(--primary-foreground);
-  }
-  
-  #encrypt-btn:hover {
-    border: 1px solid var(--border);
-    background-color: rgba(var(--foreground), 0.1);
-    color: var(--foreground);
-    font-weight: bold;
-  }
-  
-  #decrypt-btn {
-    border: 1px solid var(--border);
-    background-color: var(--primary);
-    color: var(--primary-foreground);
-  }
-  
-  #decrypt-btn:hover {
-    background-color: rgba(var(--foreground), 0.1);
-    color: var(--foreground);
-    font-weight: bold;
-  }
-  
-  img.section-output {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
+  .title {
+    font-size: 1rem;
   }
-  
-  #copy-btn {
-    border: 1px solid var(--border);
-    background-color: var(--primary);
-    color: var(--primary-foreground);
-    
+
+  .container {
+    flex-direction: column;
+    padding: 8px;
   }
-  
-  #copy-btn:hover {
-    background-color: rgba(var(--foreground), 0.1);
-    color: var(--foreground);
-    font-weight: bold;
-  }
-  footer {
+
+  .input-section, .output-section {
     width: 100%;
-    /* margin: 20px; */
-    text-align: center;
-    padding: 16px;
-    background-color: var(--background);
-    color: var(--footer);
   }
+}
 
-  #footer-text {
-    font-size: 50px;
-  }
-  
-  
-  @media (min-width: 768px) {
-   
-    .header {
-      margin-top: 10px;
-        
-    }
-  
-    .title {
-        font-size: 20px;
-        text-align: left;
-        margin-top: 20px; /* Ajuste adicional en escritorio */
-    }
-  
-    .container {
-        flex-direction: row;
-        align-items: center;
-        height: 100%;
-        margin: 0px;
-    }
-  
-    .input-section, .output-section {
-        flex: 1;
-        margin: 8px;
-    
-    }
-  }
-  
-  span {
-    color: var(--footer);
-    font-weight: bolder;
-  }
+span {
+  color: var(--footer);
+  font-weight: bold;
+}
