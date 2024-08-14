@@ -34,6 +34,8 @@ La página web incluye:
 - **Campos para la inserción de texto**: El usuario puede ingresar el texto que desee encriptar o desencriptar.
 - **Opciones de encriptar y desencriptar**: El usuario puede seleccionar entre estas dos opciones.
 - **Visualización del resultado**: El resultado del texto encriptado o desencriptado se muestra en pantalla.
+- **Botón de copiado**: Un botón que permite copiar el texto encriptado o desencriptado al portapapeles, imitando la funcionalidad de `Ctrl+C` o la opción "copiar" del menú de las aplicaciones.
+- **Historial de acciones**: Muestra las últimas 5 acciones de encriptado o desencriptado realizadas.
 
 ## Extras
 
