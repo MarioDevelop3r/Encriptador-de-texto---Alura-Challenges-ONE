@@ -28,7 +28,7 @@
 
 /* Estilos del body */
 body {
-  margin: 0;
+  margin: 10px;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
   background-color: var(--background);
@@ -65,7 +65,7 @@ header {
   color: var(--foreground);
   font-size: 1.25rem;
   text-align: center;
-  margin: 0 20px;
+  margin: 10px 20px;
 }
 
 /* Contenedor principal */
@@ -76,10 +76,10 @@ header {
   justify-content: center;
   align-items: center;
   background-color: var(--card);
-  padding: 16px;
+  padding: 16px 0;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   margin: 20px auto;
   text-align: center;
@@ -88,13 +88,14 @@ header {
 /* Secciones de entrada y salida */
 .input-section, .output-section {
   background-color: var(--card);
-  padding: 16px;
+  padding:  16px 0;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 100%;
+  width: 90%;
   box-sizing: border-box;
   color: var(--foreground);
   font-weight: bold;
+ 
 }
 
 /* Estilo del texto de salida */
@@ -180,9 +181,12 @@ img.section-output {
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 90%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
   box-sizing: border-box;
-  margin: auto;
+  margin: 20px auto;
   color: var(--foreground);
 }
 
@@ -196,6 +200,36 @@ img.section-output {
   border-bottom: 1px solid var(--border);
   padding: 8px 0;
 }
+
+#history-list li:last-child {
+  border-bottom: none;
+}
+/* Estilos de acerca del proyecto */
+
+.about-section {
+  background-color: var(--card);
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+  margin: 20px auto;
+  color: var(--foreground);
+  font-size: small;
+}
+
+.about-section h2 {
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+.about-section p {
+  margin: 8px 0 0;
+  font-size: smaller;
+}
+
 
 /* Estilos del footer */
 footer {
@@ -219,13 +253,14 @@ footer {
   .container {
     flex-direction: row;
     align-items: flex-start;
-    height: auto;
+    height: 80vh;
     margin: 20px auto;
   }
 
   .input-section, .output-section {
     flex: 1;
     margin: 0 10px;
+    justify-content: flex-start;
   }
 }
 
@@ -250,6 +285,7 @@ footer {
 
   .input-section, .output-section {
     width: 100%;
+    margin: 10px 10px;
   }
 }
 
