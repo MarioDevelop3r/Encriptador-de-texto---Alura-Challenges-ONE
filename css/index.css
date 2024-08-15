@@ -230,9 +230,9 @@ img.section-output {
   font-size: 0.9rem;
 }
 .about-section p {
-  font-family: 'Montserrat', sans-serif;
   margin: 8px 0 0;
   font-size: smaller;
+  font-weight: bolder;
 }
 
 
