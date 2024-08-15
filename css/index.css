@@ -93,6 +93,7 @@ header {
 .input-section, .output-section {
   background-color: var(--card);
   padding:  16px 0;
+  margin-bottom: 10px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 80%;
@@ -241,7 +242,7 @@ footer {
   width: 100%;
   text-align: center;
   padding: 16px;
-  background-color: var(--background);
+  background-color: var(--border);
   color: var(--footer);
 }
 
@@ -257,8 +258,8 @@ footer {
 
   .container {
     flex-direction: row;
-    
-    height: 80vh;
+
+    height: 100vh;
     margin: 20px auto;
   }
 
