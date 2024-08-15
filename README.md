@@ -35,7 +35,8 @@ La página web incluye:
 - **Opciones de encriptar y desencriptar**: El usuario puede seleccionar entre estas dos opciones.
 - **Visualización del resultado**: El resultado del texto encriptado o desencriptado se muestra en pantalla.
 - **Botón de copiado**: Un botón que permite copiar el texto encriptado o desencriptado al portapapeles, imitando la funcionalidad de `Ctrl+C` o la opción "copiar" del menú de las aplicaciones.
-- **Historial de acciones**: Muestra las últimas 5 acciones de encriptado o desencriptado realizadas.
+- **Historial de acciones**: Muestra las últimas 5 acciones de encriptado o desencriptado realizadas.-
+- **Botón de cambio de tema**: Un botón que permite alternar entre el modo claro y el modo oscuro para mejorar la experiencia del usuario según sus preferencias y condiciones de iluminación.
 
 ## Extras
 
