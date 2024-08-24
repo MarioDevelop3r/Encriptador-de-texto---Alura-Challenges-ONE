@@ -1,82 +1,119 @@
-// Función para encriptar el texto
-function encryptText() {
-  const inputText = document.getElementById('input-text').value;
-  if (!validText(inputText)) {
-    alert("El texto ingresado no debe contener acentos ni caracteres especiales");
-    return;
-  }
-  const encryptedText = inputText
-    .replace(/e/g, "enter")
-    .replace(/i/g, "imes")
-    .replace(/a/g, "ai")
-    .replace(/o/g, "ober")
-    .replace(/u/g, "ufat");
-  document.getElementById('output-text').innerText = encryptedText;
-  document.getElementById('output-message').innerText = 'Texto encriptado:';
-  addHistory(`Texto encriptado: ${encryptedText}`);
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const themeToggleBtn = document.getElementById("theme-toggle-btn");
+  const body = document.body;
+  const historyList = document.getElementById("history-list");
+  const inputText = document.getElementById("input-text");
+  const outputText = document.getElementById("output-text");
 
-// Función para desencriptar el texto
-function decryptText() {
-  const inputText = document.getElementById('input-text').value;
-  if (!validText(inputText)) {
-    alert("El texto ingresado no debe contener acentos ni caracteres especiales");
-    return;
+  // Cargar el tema guardado
+  const currentTheme = localStorage.getItem("theme") || "light";
+  if (currentTheme === "dark") {
+    body.classList.add("dark-mode");
+    themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+  } else {
+    themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
   }
-  const decryptedText = inputText
-    .replace(/enter/g, "e")
-    .replace(/imes/g, "i")
-    .replace(/ai/g, "a")
-    .replace(/ober/g, "o")
-    .replace(/ufat/g, "u");
-  document.getElementById('output-text').innerText = decryptedText;
-  document.getElementById('output-message').innerText = 'Texto desencriptado:';
-  addHistory(`Texto desencriptado: ${decryptedText}`);
-}
 
-// Función para copiar el texto
-function copyText() {
-  const text = document.getElementById('output-text').innerText;
-  navigator.clipboard.writeText(text).then(() => {
-    alert("Texto copiado en el portapapeles");
+  // Cambiar tema
+  themeToggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+    if (body.classList.contains("dark-mode")) {
+      themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+      localStorage.setItem("theme", "dark");
+    } else {
+      themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+      localStorage.setItem("theme", "light");
+    }
   });
-}
 
-// Función para agregar al historial
-function addHistory(entry) {
-  const history = JSON.parse(localStorage.getItem('history')) || [];
-  history.push(entry);
-  localStorage.setItem('history', JSON.stringify(history));
-  showHistory();
-}
+  // Función para validar el texto
+  const validateText = (text) => {
+    const regex = /^[a-z\s!]+$/; // Solo permite letras minúsculas y espacios
+    return regex.test(text);
+  };
 
-// Función para mostrar el historial
-function showHistory() {
-  const history = JSON.parse(localStorage.getItem('history')) || [];
-  const historyList = document.getElementById('history-list');
-  
-  // Solo muestra los últimos 5 registros
-  const limitedHistory = history.slice(-5);
-  
-  historyList.innerHTML = limitedHistory.map(item => `<li>${item}</li>`).join('');
-}
+  // Función para encriptar
+  const encryptText = (text) => {
+    return text
+      .replace(/e/g, "enter")
+      .replace(/i/g, "imes")
+      .replace(/a/g, "ai")
+      .replace(/o/g, "ober")
+      .replace(/u/g, "ufat");
+  };
 
-// Función para validar que el texto ingresado no contenga acentos ni caracteres especiales
-function validText(text) {
-  const regex = /^[a-z\s!/]*$/;
-  return regex.test(text);
-}
+  // Función para desencriptar
+  const decryptText = (text) => {
+    return text
+      .replace(/enter/g, "e")
+      .replace(/imes/g, "i")
+      .replace(/ai/g, "a")
+      .replace(/ober/g, "o")
+      .replace(/ufat/g, "u");
+  };
 
-// Función para cambiar el tema
-function toggleTheme() {
-  document.body.classList.toggle('dark-mode');
-}
+  // Agregar al historial, manteniendo solo 3 elementos
+  const addToHistory = (originalText, resultText) => {
+    const historyItem = document.createElement("li");
+    historyItem.textContent = `Original: ${originalText} | Resultado: ${resultText}`;
 
-// Event listeners para los botones
-document.getElementById('encrypt-btn').addEventListener('click', encryptText);
-document.getElementById('decrypt-btn').addEventListener('click', decryptText);
-document.getElementById('copy-btn').addEventListener('click', copyText);
-document.getElementById('theme-toggle-btn').addEventListener('click', toggleTheme);
+    if (historyList.childElementCount >= 3) {
+      historyList.removeChild(historyList.firstChild); // Limitar a 3 registros
+    }
 
-// Mostrar el historial al cargar la página
-document.addEventListener('DOMContentLoaded', showHistory); 
+    historyList.appendChild(historyItem);
+
+    // Mostrar la lista si hay elementos
+    if (historyList.childElementCount > 0) {
+      historyList.classList.remove("hidden");
+    }
+  };
+
+  // Encriptar el texto
+  document.getElementById("encrypt-btn").addEventListener("click", () => {
+    const text = inputText.value;
+    if (validateText(text)) {
+      const encryptedText = encryptText(text);
+      outputText.textContent = encryptedText;
+      addToHistory(text, encryptedText);
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Texto no válido",
+        text: "Solo se permiten letras minúsculas y espacios.",
+      });
+    }
+  });
+
+  // Desencriptar el texto
+  document.getElementById("decrypt-btn").addEventListener("click", () => {
+    const text = inputText.value;
+    if (validateText(text)) {
+      const decryptedText = decryptText(text);
+      outputText.textContent = decryptedText;
+      addToHistory(text, decryptedText);
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Texto no válido",
+        text: "Solo se permiten letras minúsculas y espacios.",
+      });
+    }
+  });
+
+  // Copiar el texto encriptado al portapapeles
+  document.getElementById("copy-btn").addEventListener("click", () => {
+    const text = outputText.textContent;
+    if (text) {
+      navigator.clipboard.writeText(text).then(() => {
+        Swal.fire({
+          icon: "success",
+          title: "Texto copiado al portapapeles",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
+    }
+  });
+});
+

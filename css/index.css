@@ -1,301 +1,328 @@
-/* Estilos generales */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
+/* Variables de estilo */
 :root {
- 
-  --background: #f0f0f0;
-  --card: #ffffff;
-  --foreground: #333;
-  --input: #f9f9f9;
-  --ring: #333;
-  --primary: #007bff;
-  --primary-foreground: #ffffff;
-  --border: #ccc;
-  --muted-foreground: #666;
-  --footer: #333;
+    --background-light: #f0f0f0;
+    --card-light: #ffffff;
+    --foreground-light: #333;
+    --input-light: #f9f9f9;
+    --border-light: #ccc;
+    --primary-light: #007bff;
+    --footer-light: #333;
+
+    --background-dark: #1e1e1e;
+    --card-dark: #2e2e2e;
+    --foreground-dark: #e0e0e0;
+    --input-dark: #3a3a3a;
+    --border-dark: #555;
+    --primary-dark: #3b82f6;
+    --footer-dark: #e0e0e0;
+
+    /* Variables activas */
+    --background: var(--background-light);
+    --card: var(--card-light);
+    --foreground: var(--foreground-light);
+    --input: var(--input-light);
+    --border: var(--border-light);
+    --primary: var(--primary-light);
+    --footer: var(--footer-light);
 }
 
 /* Modo oscuro */
 .dark-mode {
-  --background: #333;
-  --card: #444;
-  --foreground: #ddd;
-  --input: #555;
-  --ring: #888;
-  --primary: #888;
-  --primary-foreground: #ddd;
-  --border: #888;
-  --muted-foreground: #aaa;
-  --footer: #ddd;
+    --background: var(--background-dark);
+    --card: var(--card-dark);
+    --foreground: var(--foreground-dark);
+    --input: var(--input-dark);
+    --border: var(--border-dark);
+    --primary: var(--primary-dark);
+    --footer: var(--footer-dark);
 }
 
-/* Estilos del body */
+/* Estilos generales */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
-  background-color: var(--background);
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  /* overflow: hidden; */
-  align-items: center;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-/* Estilos del header */
 header {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-  background-color: var(--background);
+    width: 100%;
+    background-color: var(--border);
+    color: var(--footer);
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Para ajustar en pantallas pequeñas */
 }
 
 .header-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 .logo {
-  width: 50px;
-  height: auto;
+    height: 40px;
+    padding-left: 10px;
 }
 
 .title {
-  color: var(--foreground);
-  font-size: 1.25rem;
-  text-align: center;
-  margin: 10px 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center; /* Centra el título en pantallas pequeñas */
+    flex-grow: 1; /* Ocupa todo el espacio posible */
 }
 
-/* Contenedor principal */
-.container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--card);
-  padding: 16px 0;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 1200px;
-  margin: 20px auto;
-  text-align: center;
+#theme-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--foreground);
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+#theme-toggle-btn:hover {
+    color: var(--primary);
+}
+
+main.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--card);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
 }
 
 /* Secciones de entrada y salida */
-.input-section, .output-section {
-  background-color: var(--card);
-  padding:  16px 0;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 90%;
-  box-sizing: border-box;
-  color: var(--foreground);
-  font-weight: bold;
- 
+.input-section,
+.output-section,
+.history-section {
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--card);
+    transition: box-shadow 0.3s, transform 0.3s;
 }
 
-/* Estilo del texto de salida */
-.output-text {
-  color: var(--foreground);
-  font-weight: bold;
-  padding-bottom: 20px;
-}
-
-/* Estilo de los encabezados */
-h2 {
-  color: var(--foreground);
-  font-size: 1rem;
+.input-section:hover,
+.output-section:hover,
+.history-section:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
 }
 
 /* Estilo del área de texto */
 textarea {
-  width: 95%;
-  height: 150px;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  background-color: var(--input);
-  color: var(--foreground);
-  transition: box-shadow 0.3s;
-  box-sizing: border-box;
+    width: 100%;
+    height: 150px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background-color: var(--input);
+    color: var(--foreground);
+    padding: 10px;
+    box-sizing: border-box;
+    resize: none;
+    overflow: auto;
+    transition: box-shadow 0.3s, border-color 0.3s;
 }
 
-/* Estilo cuando el área de texto está en foco */
 textarea:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px var(--ring);
-}
-
-/* Información adicional */
-.info {
-  color: var(--muted-foreground);
-  margin-bottom: 8px; 
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary);
+    border-color: var(--primary);
 }
 
 /* Estilo de los botones */
 .buttons {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+    flex-wrap: wrap; /* Ajuste de botones en pantallas pequeñas */
 }
 
 button {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--primary);
+    color: var(--card);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 button:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
+    background-color: #0056b3; /* Color más oscuro en hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Botones específicos */
-#encrypt-btn, #decrypt-btn, #copy-btn, #theme-toggle-btn {
-  border: 1px solid var(--border);
-  background-color: var(--primary);
-  color: var(--primary-foreground);
+/* Historial */
+.history-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 10px;
 }
 
-#encrypt-btn:hover, #decrypt-btn:hover, #copy-btn:hover , #theme-toggle-btn:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  color: var(--foreground);
-  font-weight: bold;
-}
-
-/* Imagen en la sección de salida */
-img.section-output {
-  width: 140px;
-  height: auto;
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Estilos del historial */
-.history-section {
-  background-color: var(--card);
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  max-width: 1200px;
-  box-sizing: border-box;
-  margin: 20px auto;
-  color: var(--foreground);
-}
-
+/* Estilos para la sección de historial */
 #history-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: var(--foreground);
+    max-height: 200px; /* Limitar la altura máxima del historial */
+    overflow-y: auto;  /* Añadir barra de desplazamiento si es necesario */
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background-color: var(--input);
+    transition: border-color 0.3s;
 }
 
+#history-list:hover {
+    border-color: var(--primary);
+}
+
+/* Estilos para ocultar la lista si no hay registros */
+.hidden {
+    display: none;
+}
+
+/* Ajuste de la fuente y el tamaño similar al textarea */
 #history-list li {
-  border-bottom: 1px solid var(--border);
-  padding: 8px 0;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
 }
 
 #history-list li:last-child {
-  border-bottom: none;
-}
-/* Estilos de acerca del proyecto */
-
-.about-section {
-  background-color: var(--card);
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  max-width: 1200px;
-  box-sizing: border-box;
-  margin: 20px auto;
-  color: var(--foreground);
-  font-size: small;
+    border-bottom: none;
 }
 
-.about-section h2 {
-  color: var(--primary);
-  font-size: 0.9rem;
-}
-.about-section p {
-  margin: 8px 0 0;
-  font-size: smaller;
-  font-weight: bolder;
+/* Estilo de la barra de desplazamiento */
+#history-list::-webkit-scrollbar {
+    width: 12px;
 }
 
+#history-list::-webkit-scrollbar-track {
+    background-color: var(--input);
+}
 
-/* Estilos del footer */
+#history-list::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 6px;
+}
+
+#history-list {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--input);
+}
+
+/* Footer */
 footer {
-  width: 100%;
-  text-align: center;
-  padding: 16px;
-  background-color: var(--border);
-  color: var(--footer);
-}
-
-/* Media Queries */
-@media (min-width: 768px) {
-  .header-nav {
-    padding: 0 20px;
-  }
-
-  .title {
-    font-size: 1.125rem;
-  }
-
-  .container {
-    flex-direction: row;
-
-    height: 100vh;
-    margin: 20px auto;
-  }
-
-  .input-section, .output-section {
-    flex: 1;
-    margin: 0 10px;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .header-nav {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .logo {
-    width: 30px;
-  }
-
-  .title {
-    font-size: 1rem;
-  }
-
-  .container {
-    flex-direction: column;
-    padding: 8px;
-  }
-
-  .input-section, .output-section {
     width: 100%;
-    margin: 10px 10px;
-  }
+    background-color: var(--border);
+    color: var(--footer);
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px 8px 0 0;
+    transition: box-shadow 0.3s;
 }
 
-span {
-  color: var(--footer);
-  font-weight: bold;
+footer:hover {
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    margin: 0;
+    padding: 5px 0;
+    font-weight: bold;
+}
+
+footer .social-links {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+footer .social-links a {
+    color: var(--footer);
+    font-size: 1em;
+    transition: color 0.3s, transform 0.3s;
+    font-weight: 900;
+}
+
+footer .social-links a:hover {
+    color: var(--primary);
+    transform: scale(1.2);
+}
+
+/* Estilo personalizado para barras de desplazamiento */
+body, textarea {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--input);
+}
+
+body::-webkit-scrollbar, textarea::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track, textarea::-webkit-scrollbar-track {
+    background-color: var(--input);
+}
+
+body::-webkit-scrollbar-thumb, textarea::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.2rem; /* Ajusta el tamaño del título en pantallas pequeñas */
+    }
+
+    .input-section, .output-section, .history-section {
+        width: 100%;
+        margin: 10px 0; /* Ajusta el margen en pantallas pequeñas */
+    }
+
+    textarea {
+        font-size: 0.8rem; /* Ajusta el tamaño de fuente del textarea en pantallas pequeñas */
+    }
+
+    .buttons {
+        flex-direction: column; /* Botones en columna en pantallas pequeñas */
+    }
+
+    button {
+        width: 100%; /* Botones ocupan el ancho completo en pantallas pequeñas */
+    }
+    footer {
+        padding: 5px;
+        font-size: 0.8rem;
+    }
 }

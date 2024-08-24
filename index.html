@@ -4,54 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="./css/index.css">
-    <title>Encriptador de texto</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <title>Encriptador de Texto</title>
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
     <header>
         <nav class="header-nav">
             <img class="logo" src="./img/alura-logo.svg" alt="Logo de Alura">
             <h1 class="title">Encriptador de texto - Alura Challenges ONE</h1>
+            <a id="theme-toggle-btn" aria-label="Cambiar Tema" title="Cambiar Tema">
+                <i class="fas fa-moon"></i>
+            </a>
         </nav>
     </header>
+
     <main class="container">
-        <section class="input-section">
-            <h2>Ingrese el texto aquí</h2>
-            <textarea id="input-text" placeholder="Escribe aquí..."></textarea>
-            <div class="info">Solo letras minúsculas y sin acentos</div>
+        <section class="input-section" aria-labelledby="input-title">
+            <h2 id="input-title">Ingresa tu texto</h2>
+            <textarea id="input-text" placeholder="Escribe aquí..." aria-label="Área de texto para ingresar tu mensaje"></textarea>
             <div class="buttons">
-                <button id="encrypt-btn">Encriptar</button>
-                <button id="decrypt-btn">Desencriptar</button>
-                <button id="theme-toggle-btn">Tema</button>
+                <button id="encrypt-btn" class="clean" aria-label="Encriptar texto">Encriptar</button>
+                <button id="decrypt-btn" class="clean" aria-label="Desencriptar texto">Desencriptar</button>
+                <button id="copy-btn" aria-label="Copiar texto">Copiar</button>
             </div>
         </section>
-        <section class="output-section">
-            <img class="section-output" src="./img/muñeco.svg" alt="Imagen de persona buscando algo">
-            <h2 id="output-message">Ningún mensaje fue encontrado</h2>
-            <div class="output-text" id="output-text">ℹ Ingresa el texto que deseas encriptar o desencriptar</div>
-            <button id="copy-btn">Copiar</button>
+
+        <section class="output-section" aria-labelledby="output-title">
+            <h2 id="output-title">Texto encriptado:</h2>
+            <p id="output-text" role="region" aria-live="polite"></p>
+        </section>
+
+        <section class="history-section" aria-labelledby="history-title">
+            <h2 id="history-title">Historial</h2>
+            <ul id="history-list" class="hidden"></ul>
         </section>
     </main>
-    <section class="about-section">
-        <h2 class="">Acerca de</h2>
-        <p>Este es un proyecto desarrollado para el evento Alura Challenges ONE, el cual consiste en un encriptador de texto que permite encriptar y desencriptar mensajes.</p>
-        <p>El encriptador utiliza el cifrado de César, un tipo de cifrado por sustitución en el que una letra en el texto original es reemplazada por otra letra que se encuentra un número fijo de posiciones más adelante en el alfabeto.</p>
-        <p>El cifrado de César fue utilizado por Julio César para enviar mensajes secretos a sus generales durante las guerras.</p>
-    </section>
-    
-    <section class="history-section">
-        <h2 class="">Historial</h2>
-        <ul id="history-list"></ul>
-    </section>
+
     <footer>
-        <div class="footer-text">
-            <p>Hecho con ❤️ por: <span>Mario Rojas</span></p>
-            <p>Sígueme en mis redes:
-                <a href="https://github.com/MarioDevelop3r" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/mario-rojas-dev/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            </p>
+        <p>&copy; 2024 Mario Rojas. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <p>Sígueme en:</p>
+            <a href="https://github.com/MarioDevelop3r" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/mario-rojas-dev/" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
         </div>
     </footer>
+
     <script src="./js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
