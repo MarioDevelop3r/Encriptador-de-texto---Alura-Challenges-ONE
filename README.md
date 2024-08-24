@@ -57,7 +57,7 @@ Para mejorar la experiencia del usuario, he incluido:
    ```
 3. Abre el archivo `index.html` en tu navegador para ver la aplicación en funcionamiento.
 
-## Capturas de Pantalla
+## Insignia culminacion curso
 
 <p align="center">
   <img src="https://github.com/MarioDevelop3r/Encriptador-de-texto---Alura-Challenges-ONE/assets/135486752/0067d47e-adbe-4ecb-94ba-ebfe99aa56fb" alt="Captura de pantalla de la aplicación" width="500"/>
