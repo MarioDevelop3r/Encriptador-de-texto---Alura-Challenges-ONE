@@ -152,6 +152,7 @@ textarea:focus {
     border-color: var(--primary);
 }
 
+
 /* Estilo de los botones */
 .buttons {
     display: flex;
@@ -175,6 +176,20 @@ button:hover {
     transform: scale(1.05);
     background-color: #0056b3; /* Color más oscuro en hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Estilo del output-text */
+
+#output-text {
+    width: 100%;
+    min-height: 40px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background-color: var(--input);
+    color: var(--foreground);
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: auto;
+    transition: box-shadow 0.3s, border-color 0.3s;
 }
 
 /* Historial */
@@ -257,12 +272,15 @@ footer:hover {
 
 footer p {
     margin: 0;
-    padding: 5px 0;
-    font-weight: bold;
+    padding: 10px 0;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+footer i {
+    font-size: 1.5rem;
 }
 
 footer .social-links {
-    margin-top: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -271,7 +289,7 @@ footer .social-links {
 
 footer .social-links a {
     color: var(--footer);
-    font-size: 1em;
+    font-size: 0.8rem;
     transition: color 0.3s, transform 0.3s;
     font-weight: 900;
 }
@@ -301,6 +319,10 @@ body::-webkit-scrollbar-thumb, textarea::-webkit-scrollbar-thumb {
 }
 
 @media (max-width: 768px) {
+    header .header-nav {
+        padding: 10px; /* Ajusta el relleno en pantallas pequeñas */
+    }
+
     .title {
         font-size: 1.2rem; /* Ajusta el tamaño del título en pantallas pequeñas */
     }
@@ -308,6 +330,10 @@ body::-webkit-scrollbar-thumb, textarea::-webkit-scrollbar-thumb {
     .input-section, .output-section, .history-section {
         width: 100%;
         margin: 10px 0; /* Ajusta el margen en pantallas pequeñas */
+        h2{
+            font-size: 1.2rem; /* Ajusta el tamaño del título en pantallas pequeñas */
+            text-align: center; /* Centra el título en pantallas pequeñas */
+        }
     }
 
     textarea {
@@ -323,6 +349,8 @@ body::-webkit-scrollbar-thumb, textarea::-webkit-scrollbar-thumb {
     }
     footer {
         padding: 5px;
+    }
+    footer p {
         font-size: 0.8rem;
     }
 }
