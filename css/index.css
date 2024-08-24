@@ -259,10 +259,10 @@ footer {
     width: 100%;
     background-color: var(--border);
     color: var(--footer);
-    padding: 10px;
+   
     text-align: center;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px 8px 0 0;
+    border-radius: 8px;
     transition: box-shadow 0.3s;
 }
 
