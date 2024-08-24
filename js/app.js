@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Función para validar el texto
   const validateText = (text) => {
-    const regex = /^[a-z\s!]+$/; // Solo permite letras minúsculas y espacios
+    const regex = /^[a-z\s!]+$/; // Solo permite letras minúsculas, espacios y ! ya que el mensaje secreto lo incluye
     return regex.test(text);
   };
 
