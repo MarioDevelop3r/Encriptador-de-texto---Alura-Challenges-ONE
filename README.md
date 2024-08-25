@@ -57,34 +57,4 @@ Para mejorar la experiencia del usuario, he incluido:
    ```
 3. Abre el archivo `index.html` en tu navegador para ver la aplicación en funcionamiento.
 
-## Capturas de Pantalla
-
-<p align="center">
-  <img src="https://github.com/MarioDevelop3r/Encriptador-de-texto---Alura-Challenges-ONE/assets/135486752/0067d47e-adbe-4ecb-94ba-ebfe99aa56fb" alt="Captura de pantalla de la aplicación" width="500"/>
-</p>
-
-## Estructura del Proyecto
-
-```bash
-├── index.html
-├── css
-│   └── index.css
-├── js
-│   └── app.js
-└── img
-    ├── logo.png
-    └── fondo.png
-```
-
-## Tecnologías Utilizadas
-
-- **HTML5**: Estructura del sitio web.
-- **CSS3**: Estilización y diseño del sitio web, incluyendo la implementación de temas claro y oscuro.
-- **JavaScript**: Lógica de encriptación/desencriptación, manipulación del DOM, y gestión del historial.
-- **SweetAlert2**: Librería utilizada para mostrar alertas personalizadas al usuario.
-- **FontAwesome**: Íconos utilizados en la interfaz.
-
-## Autor
-
-- **Mario Rojas** - [GitHub](https://github.com/MarioDevelop3r) | [LinkedIn](https://www.linkedin.com/in/mario-rojas-dev/)
-
+ 
