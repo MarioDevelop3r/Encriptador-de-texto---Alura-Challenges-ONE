@@ -6,19 +6,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const outputText = document.getElementById("output-text");
 
   // Cargar el tema guardado
-  const currentTheme = localStorage.getItem("theme") || "light";
+  const currentTheme = localStorage.getItem("theme") || "light"; // Por defecto, el tema es claro
   if (currentTheme === "dark") {
     body.classList.add("dark-mode");
-    themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+    themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>'; // Cambiar el icono del botón
   } else {
-    themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+    themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>'; // Cambiar el icono del botón
   }
 
   // Cambiar tema
   themeToggleBtn.addEventListener("click", () => {
     body.classList.toggle("dark-mode");
     if (body.classList.contains("dark-mode")) {
-      themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+      themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>'; // Cambiar el icono del botón
       localStorage.setItem("theme", "dark");
     } else {
       themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
@@ -116,4 +116,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
